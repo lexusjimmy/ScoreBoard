@@ -40,10 +40,8 @@ function TopPageWrapper(): ReactElement{
                 </Grid>
                 <Grid item xs={5}>
                     <Box textAlign={'center'}>
-                        <ScoreBoard score={15}></ScoreBoard>
-                        <Button variant="contained" size="large" color="primary">
-                            <AddButton></AddButton>
-                        </Button>
+                        <ScoreBoardContainer teamId={2} />
+                        <AddPointButtonContainer point={1} teamId={2} />
                     </Box>
                 </Grid>
             </Grid>

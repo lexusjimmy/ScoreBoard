@@ -12,8 +12,8 @@ type AddPointButtonContainerProps = {
 const AddPointButtonContainer: React.FC<AddPointButtonContainerProps> = function AddPointButtonContainer(props): ReactElement {
     const dispatch = useDispatch();
     return (
-        <IconButton>
-            <AddButton onClick={()=> dispatch(addPoint({point: props.point, teamId: props.teamId}))}/>
+        <IconButton onClick={()=> dispatch(addPoint({point: props.point, teamId: props.teamId}))}>
+            <AddButton />
         </IconButton>
     )
 }
