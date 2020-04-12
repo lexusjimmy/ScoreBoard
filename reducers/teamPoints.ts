@@ -13,7 +13,9 @@ const teamPoints = (state = [], action: AddPointType ): TeamPointType[] => {
             generateNewId();
             return [...state, {id:getPointId(), teamId: action.payload.teamId, point: action.payload.point}];
         // case ActionType.MINUS_POINT: 
-    
+        case ActionType.ROLL_BACK: 
+            state.pop();
+            return [...state];
         default:
             return state;
     }

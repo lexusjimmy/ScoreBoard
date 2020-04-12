@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 
 import ScoreBoardContainer from "../container/ScoreBoardContainer"
 import AddPointButtonContainer from "../container/AddPointButtonContainer";
+import HistoryRollBackContainer from "../container/HistoryRollBackContainer";
 const CenterTextBox = styled(Box)`
     height: 100%;
     width: 100%;
@@ -17,7 +18,6 @@ const CenterTextBox = styled(Box)`
     font-weight: bold;
 `;
 function TopPageWrapper(): ReactElement{
-    
     
     return (
         <Container>
@@ -33,9 +33,7 @@ function TopPageWrapper(): ReactElement{
                         :
                     </CenterTextBox>
                     <Box textAlign={'center'}>
-                        <Fab size="medium" aria-label="history">
-                            <HistoryButton></HistoryButton>
-                        </Fab>
+                        <HistoryRollBackContainer />
                     </Box>
                 </Grid>
                 <Grid item xs={5}>

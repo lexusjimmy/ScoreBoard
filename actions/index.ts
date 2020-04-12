@@ -1,5 +1,5 @@
 import { AddPointVariables, AddPointType } from "../types/AddPointType";
-import { ActionType } from "../types/BasicType";
+import { ActionType, BasicActionType } from "../types/BasicType";
 
 export const addPoint = ({point = 1, teamId}: AddPointVariables): AddPointType => ({
     type: ActionType.ADD_POINT,
@@ -9,4 +9,7 @@ export const addPoint = ({point = 1, teamId}: AddPointVariables): AddPointType =
     }
 })
 
-
+export const rollBack = (): BasicActionType => ({
+    type: ActionType.ROLL_BACK,
+    payload: {}
+});
