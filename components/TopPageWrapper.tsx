@@ -17,7 +17,7 @@ const CenterTextBox = styled(Box)`
     font-size: 15vw;
     font-weight: bold;
 `;
-function TopPageWrapper(): ReactElement{
+const TopPageWrapper: React.FC = function TopPageWrapper(): ReactElement{
     
     return (
         <Container>
