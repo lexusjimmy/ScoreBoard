@@ -4,7 +4,7 @@ import { ReactElement, ReactNode } from "react";
 
 
 type ScoreBoardProps = {
-    score: Number;
+    score: number;
 }
 
 const SizedPaper = styled(Paper)`
