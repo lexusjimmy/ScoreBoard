@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import ScoreBoardContainer from "../container/ScoreBoardContainer"
 import AddPointButtonContainer from "../container/AddPointButtonContainer";
 import HistoryRollBackContainer from "../container/HistoryRollBackContainer";
+import ScoreTableContainer from "../container/ScoreTableContainer";
 const CenterTextBox = styled(Box)`
     height: 100%;
     width: 100%;
@@ -25,22 +26,39 @@ const TopPageWrapper: React.FC = function TopPageWrapper(): ReactElement{
                 <Grid item xs={5}>
                     <Box textAlign={'center'}>
                         <ScoreBoardContainer teamId={1}/>
-                        <AddPointButtonContainer point={1} teamId={1} />
                     </Box>
                 </Grid>
                 <Grid item xs={2}>
                     <CenterTextBox>
                         :
                     </CenterTextBox>
+                </Grid>
+                <Grid item xs={5}>
+                    <Box textAlign={'center'}>
+                        <ScoreBoardContainer teamId={2} />
+                    </Box>
+                </Grid>
+            </Grid>
+            <Grid container>
+                <Grid item xs={5}>
+                    <Box textAlign={'center'}>
+                        <AddPointButtonContainer point={1} teamId={1} />
+                    </Box>
+                </Grid>
+                <Grid item xs={2}>
                     <Box textAlign={'center'}>
                         <HistoryRollBackContainer />
                     </Box>
                 </Grid>
                 <Grid item xs={5}>
                     <Box textAlign={'center'}>
-                        <ScoreBoardContainer teamId={2} />
                         <AddPointButtonContainer point={1} teamId={2} />
                     </Box>
+                </Grid>
+            </Grid>
+            <Grid container>
+                <Grid item xs={12}>
+                    <ScoreTableContainer />
                 </Grid>
             </Grid>
         </Container>
