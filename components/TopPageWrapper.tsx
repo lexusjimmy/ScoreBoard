@@ -30,7 +30,7 @@ const TopPageWrapper: React.FC = function TopPageWrapper(): ReactElement{
                 </Grid>
                 <Grid item xs={2}>
                     <CenterTextBox>
-                        :
+                        ー
                     </CenterTextBox>
                 </Grid>
                 <Grid item xs={5}>

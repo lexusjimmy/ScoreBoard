@@ -2,6 +2,7 @@ import { ReactElement } from "react";
 import { StoreStateType } from "../types/BasicType";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import InputViewContainer from "./InputViewContainer"
 
 const StyledTable = styled.table`
   th{
@@ -48,7 +49,7 @@ const ScoreTableContainer: React.FC = function ScoreTableContainer(): ReactEleme
         {pointTable.map((rowData, index) => {
           return (
             <tr key={index}>
-              <td>team {index + 1}</td>
+              <td><InputViewContainer teamId={index+1}/></td>
               {rowData.map((val, indexB) => (
                 <td key={String(index) + String(indexB)}>{val ? val : ""}</td>
               ))}
