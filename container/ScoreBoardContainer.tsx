@@ -5,7 +5,7 @@ import { StoreStateType } from "../types/BasicType";
 import styled from "styled-components";
 
 type ScoreBoardContainerProps = {
-  teamId: number;
+  placeId: number;
 };
 const NameBox = styled.div`
     text-align: center;
@@ -16,15 +16,16 @@ const ScoreBoardContainer: React.FC<ScoreBoardContainerProps> = function ScoreBo
 ): ReactElement {
   const teamScore: number = useSelector((state: StoreStateType) => {
     let accumScore: number = 0;
+    const teamId = state.teamConfigs.find((teamConfig)=> teamConfig.placeId === props.placeId)?.teamId;
     state.teamPoints
-      .filter((teamPoint) => teamPoint.teamId === props.teamId)
+      .filter((teamPoint) => teamPoint.teamId === teamId)
       .map((teamPoint) => {
         accumScore += teamPoint.point;
       });
     return accumScore;
   });
   const teamName: string = useSelector((state: StoreStateType)=> {
-      return state.teamConfigs.filter((teamConfig)=> teamConfig.teamId === props.teamId)[0].name;
+      return state.teamConfigs.filter((teamConfig)=> teamConfig.placeId === props.placeId)[0].name;
   });
   return (
       <>
